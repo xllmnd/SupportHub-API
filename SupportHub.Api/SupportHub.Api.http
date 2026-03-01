@@ -1,0 +1,30 @@
+﻿@SupportHub.Api_HostAddress = http://localhost:5102
+
+### 1. Yeni Bir Müşteri Oluştur (POST)
+POST {{SupportHub.Api_HostAddress}}/api/v1/customers
+Content-Type: application/json
+
+{
+  "name": "Ahmet Yılmaz",
+  "email": "ahmet@mail.com"
+}
+
+###
+
+### 2. Tüm Müşterileri Getir (GET) - Eğer QueryHandler'ı yazdıysan
+GET {{SupportHub.Api_HostAddress}}/api/v1/customers/1
+Accept: application/json
+
+###
+
+### 3. Yeni Bir Bilet Oluştur (POST)
+POST {{SupportHub.Api_HostAddress}}/api/v1/tickets
+Content-Type: application/json
+
+{
+  "customerId": 1,
+  "title": "Bağlantı Sorunu",
+  "description": "İnternetim çok yavaş.",
+  "category": 1,
+  "priority": 2
+}
